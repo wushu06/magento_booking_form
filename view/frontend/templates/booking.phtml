@@ -1,0 +1,61 @@
+<h1>Visit showroom booking form</h1>
+
+<form class="form contact"
+      action="<?= $block->escapeUrl($block->getFormAction()) ?>"
+      id="contact-form"
+      method="post"
+      data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
+      data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?= $block->escapeHtml(__('Book a day')) ?></span></legend><br />
+        <div class="field name required">
+            <label class="label" for="name"><span><?= $block->escapeHtml(__('First Name')) ?></span></label>
+            <div class="control">
+                <input name="firstname" id="name" title="<?= $block->escapeHtmlAttr(__('First Name')) ?>" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('firstname') ?:
+                    $this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="lastname"><span><?= $block->escapeHtml(__('Last Name')) ?></span></label>
+            <div class="control">
+                <input name="lastname" id="lastname" title="<?= $block->escapeHtmlAttr(__('Last Name')) ?>" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('lastname') ?:
+                    $this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="email"><span><?= $block->escapeHtml(__('Email')) ?></span></label>
+            <div class="control">
+                <input name="email" id="email" title="<?= $block->escapeHtmlAttr(__('Email')) ?>" class="input-text" type="email" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field telephone">
+            <label class="label" for="telephone"><span><?= $block->escapeHtml(__('Phone Number')) ?></span></label>
+            <div class="control">
+                <input name="phone" id="telephone" title="<?= $block->escapeHtmlAttr(__('Phone Number')) ?>" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('phone')) ?>" class="input-text" type="text" />
+            </div>
+        </div>
+        <div class="field bookingDate">
+            <label class="label" for="bookingDate"><span><?= $block->escapeHtml(__('booking Date')) ?></span></label>
+            <div class="control">
+                <input name="bookingDate" type="date" id="bookingDate" title="<?= $block->escapeHtmlAttr(__('booking Date')) ?>" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')
+                    ->getPostValue('bookingDate')) ?>" class="input-text"  />
+            </div>
+        </div>
+        <div class="field booking">
+            <label class="label" for="booking"><span><?= $block->escapeHtml(__('booking Time')) ?></span></label>
+            <div class="control">
+                <input name="bookingTime" type="time" id="booking" title="<?= $block->escapeHtmlAttr(__('booking Time')) ?>" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')
+                    ->getPostValue('bookingTime')) ?>" class="input-text"  />
+            </div>
+        </div>
+        <?= $block->getChildHtml('form.additional.info') ?>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <input type="hidden" name="hideit" id="hideit" value="" />
+            <button type="submit" title="<?= $block->escapeHtmlAttr(__('Send booking information')) ?>" class="action submit primary">
+                <span><?= $block->escapeHtml(__('Send booking information')) ?></span>
+            </button>
+        </div>
+    </div>
+</form>

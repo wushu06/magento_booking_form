@@ -1,0 +1,19 @@
+# structure
+app
+  ├ code
+  |   ├ Company
+  |   |   ├ Module
+  |   |   |   ├ Block
+  |   |   |   |   ├ Booking.php create a block with many functions you want for your form.
+  |   |   |   ├ Controller
+  |   |   |   |   ├ Index
+  |   |   |   |   |   ├ Booking.php  Create an Action Controller to manage the requests on the route.
+  |   |   |   ├ etc
+  |   |   |   |   ├ frontend
+  |   |   |   |   |   ├ routes.xml (Create a route to manage : GET request wich going to display HTML form template / POST request wich going to send form data to Action Controller Class.)
+  |   |   |   ├ view
+  |   |   |   |   ├ frontend
+  |   |   |   |   |   ├ layout
+  |   |   |   |   |   |   ├ module_index_booking.xml Create a basic layout for associate the Block to the form page phtml template (modulecompany_controllerpath.xml)
+  |   |   |   |   |   ├ templates
+  |   |   |   |   |   |   ├ booking.phtml

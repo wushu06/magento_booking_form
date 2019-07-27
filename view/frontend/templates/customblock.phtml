@@ -1,0 +1,26 @@
+<?php
+
+//elasticated-charm-bracelet-10pcs
+//$img = $block->loadMyProduct('9010 03 04')->getImage('image');
+//$name = $block->loadMyProduct('9010 03 04')->getName(); ?>
+<?php
+/*echo $this->getData('categoryID');
+echo  $this->categoryID();*/
+$cat_id = (int)$this->getData('category_id');
+$cat_color = $this->getData('category_color');
+$name =  $block->getCategory($cat_id )->getName();
+$img = $block->getCategory($cat_id )->getImageUrl();
+$desc = $block->getCategory($cat_id )->getData()['description'];
+$url = $block->getCategory($cat_id )->getUrl();
+?>
+<div class="block_mix_content category_block <?php echo $cat_color; ?>">
+    <a href="<?php echo $url; ?>">
+        <div class="block_mix__img">
+            <img src="<?php echo $img; ?>" alt="" />
+            <div class="block_mix__text"><p><?php echo $name; ?></p> <p><?php echo $desc; ?></p></div>
+            <div class="block_mix__btn"><a href="#">Shop now</a></div>
+            <div class="block_mix__name"><p><?php echo $name; ?></p></div>
+            <div class="block_mix__overlay"></div>
+        </div>
+    </a>
+</div>
